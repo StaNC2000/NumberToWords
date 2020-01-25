@@ -6,6 +6,12 @@ public class NumberToWords {
 
     }
 
+    public static int reverseNumber(int number){
+
+        return - 1;
+    }
+
+
     public static int getDigitCount(int number){
         int counter;
         int digit = number;
