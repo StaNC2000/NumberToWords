@@ -5,24 +5,13 @@ public class NumberToWords {
     public static void numberToWords(int number) {
 
         int digitStripper = reverse(number);
-        int reminder = 0;
-        int count = 0;
-        int difference = getDigitCount(number) - getDigitCount(digitStripper);
         if (number < 0) {
             System.out.println("Invalid Value");
         }
 
-        for (count = 0; count < getDigitCount(number); count++){
-            if (difference > 0) {
-                reminder = digitStripper % 10;
-                digitStripper = digitStripper / 10;
-                reminder = reminder;
-            }
-            else if (difference == 0){
-                reminder = digitStripper % 10;
-                digitStripper = digitStripper / 10;
-                reminder = reminder;
-            }
+        for (int count = 0; count < getDigitCount(number); count++){
+            int reminder = digitStripper % 10;
+            digitStripper = digitStripper / 10;
 
             switch (reminder) {
                 case 0:
@@ -65,17 +54,12 @@ public class NumberToWords {
         int reversingNumber = number;
         int reminder;
         int reverse = 0;
-        int difference = getDigitCount(number) - getDigitCount(reverse);
-        int count = 0;
-
 
         while (reversingNumber != 0 ) {
             reminder = reversingNumber % 10;
             reverse = (reverse * 10) + reminder;
             reversingNumber = reversingNumber / 10;
-
             }
-
 
         return reverse;
     }
